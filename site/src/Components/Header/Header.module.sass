@@ -1,0 +1,59 @@
+@mixin center_block()
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+
+.Header
+	width: 100vw
+	height: 100vh
+	
+	> 
+		h2, h1
+			position: absolute
+			@include center_block()
+
+			padding-top: 5px
+			padding-bottom: 5px
+			padding-left: 30px
+			padding-right: 30px
+			border-radius: 5px
+			
+		h2
+			top: 25px
+			
+			background: rgba(0, 0, 0, 0.75)
+			color: white
+
+			&:hover
+				box-shadow: 0 0 5px black
+				background: rgba(255, 255, 255, 1)
+				color: black
+
+		h1
+			left: 20%
+
+			box-shadow: 0 0 5px black
+			background: rgba(255, 255, 255, 1)
+			color: black
+		
+			&:hover
+				box-shadow: none
+				background: rgba(0, 0, 0, 0.75)
+				color: white
+		img
+			position: absolute
+			@include center_block()
+			top: 80%
+			left: 32%
+			width: 40px
+			transform: translate(-50%)
+
+			&:hover
+				transform: translate(-50%, 25%)
+
+.Title
+	position: absolute
+	@include center_block()
+	width: 500px
+	left: 40%
+
