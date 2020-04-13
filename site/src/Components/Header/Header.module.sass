@@ -4,7 +4,8 @@
 	transform: translate(-50%, -50%)
 
 .Header
-	width: 100vw
+	position: relative
+	width: 100%
 	height: 100vh
 	
 	> 
@@ -50,6 +51,17 @@
 
 			&:hover
 				transform: translate(-50%, 25%)
+.Video
+	border-radius: 5px
+	box-shadow: 0 0 25px black
+	box-shadow: 0 3px 47px black
+
+.Video_div
+	position: absolute
+	@include center_block()
+	left: 78%
+	perspective: 1000px
+  	transform-style: preserve-3d
 
 .Title
 	position: absolute
