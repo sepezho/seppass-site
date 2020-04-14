@@ -1,71 +1,73 @@
-@mixin center_block()
+@mixin center_top_block()
 	top: 50%
-	left: 50%
-	transform: translate(-50%, -50%)
+	transform: translate(0, -50%)
 
+@mixin center_left_block()
+	left: 50%
+	transform: translate(-50%)
+.HeaderBg
+	position: relative
+	::selection 
+		background: black
+		color: white
 .Header
 	position: relative
-	width: 100%
+	width: 1200px
 	height: 100vh
-	
+	@include center_left_block()
 	> 
-		h2, h1
-			position: absolute
-			@include center_block()
-
-			padding-top: 5px
-			padding-bottom: 5px
-			padding-left: 30px
-			padding-right: 30px
-			border-radius: 5px
-			
-		h2
-			top: 25px
-			
-			background: rgba(0, 0, 0, 0.75)
-			color: white
-
-			&:hover
-				box-shadow: 0 0 5px black
-				background: rgba(255, 255, 255, 1)
-				color: black
-
 		h1
-			left: 20%
+			position: absolute
+			@include center_top_block()
 
 			box-shadow: 0 0 5px black
-			background: rgba(255, 255, 255, 1)
+			background: white
 			color: black
-		
+			
 			&:hover
-				box-shadow: none
 				background: rgba(0, 0, 0, 0.75)
 				color: white
 		img
 			position: absolute
-			@include center_block()
-			top: 80%
-			left: 32%
+			bottom: 200px
+			left: 310px
 			width: 40px
-			transform: translate(-50%)
 
 			&:hover
-				transform: translate(-50%, 25%)
+				transform: translate(0, 25%)
 .Video
 	border-radius: 5px
-	box-shadow: 0 0 25px black
-	box-shadow: 0 3px 47px black
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.75)
 
 .Video_div
 	position: absolute
-	@include center_block()
-	left: 78%
+	@include center_top_block()
+	right: 0
 	perspective: 1000px
   	transform-style: preserve-3d
 
 .Title
 	position: absolute
-	@include center_block()
+	@include center_top_block()
 	width: 500px
-	left: 40%
+	left: 220px
 
+.MainTitle
+	// position: fixed
+	top: 0
+	// height: 67px
+	width: 100%
+	position: absolute
+	z-index: 1
+	h1 
+		position: absolute
+		top: 10px
+		@include center_left_block()
+		
+		background: rgba(0, 0, 0, 0.75)
+		color: white
+		box-shadow: 0 0 5px black
+
+		&:hover
+			background: white
+			color: black

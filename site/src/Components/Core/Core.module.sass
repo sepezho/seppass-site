@@ -1,13 +1,52 @@
-@mixin center_block()
+@mixin center_top_block()
 	top: 50%
+	transform: translate(0, -50%)
+
+@mixin center_left_block()
 	left: 50%
-	transform: translate(-50%, -50%)
+	transform: translate(-50%)
+
+.CoreBg
+	position: relative
+	width: 100%
+	background: black
 
 .Core
 	position: relative
-	width: 100%
-	height: 200vh
-	background: black
+	@include center_left_block()
+	width: 1200px
 	color: white
-	
+	::selection 
+		background: #fffffffc
+		color: black
+		
+.CoreText
+	position: relative
+	top: 150px
+	width: 500px
+	height: 1000px
+	left: 700px
+	padding-bottom: 100px
+	text-align: justify
 
+	p
+		margin-bottom: 50px
+	a
+		color: white
+
+	a:hover
+		text-decoration: none
+		color: #8D41D6
+::selection 
+	background: #fffffffc
+	color: black
+.Video
+	border-radius: 5px
+	box-shadow: 0 0 50px rgba(255, 255, 255, 0.75)
+
+.Video_div
+	position: absolute
+	@include center_top_block()
+	left: 0
+	perspective: 1000px
+  	transform-style: preserve-3d

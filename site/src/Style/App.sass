@@ -1,4 +1,44 @@
+@font-face
+	font-family: 'font'
+	src: url('../Static/Fonts/All.ttf')
+
+@font-face
+	font-family: 'h'
+	src: url('../Static/Fonts/H1.ttf')
+
 *
-  margin: 0
-  padding: 0
-  transition: .3s
+	font-family: 'font'
+	margin: 0
+	padding: 0
+	transition: .3s
+		
+	@media screen and (max-width: 600px)
+		line-height: 125%
+		letter-spacing: 1pt
+		font-size: 10pt
+
+	@media screen and (min-width: 600px)
+		line-height: 150%
+		letter-spacing: 2pt
+		font-size: 12pt
+
+h1
+	font-family: 'h'
+	padding-top: 10px
+	padding-bottom: 3px
+	padding-left: 30px
+	padding-right: 19px
+	text-align: center
+	color: black
+	border-radius: 5px
+	letter-spacing: 10pt
+	line-height: 115%
+
+	@media screen and (max-width: 600px)
+		font-size: 18pt
+
+	@media screen and (min-width: 600px)
+		font-size: 22pt
+
+img video
+	user-select: none
