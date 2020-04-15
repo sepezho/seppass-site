@@ -53,7 +53,7 @@ class Header_render extends React.Component {
 		return (
 			<div className={s.HeaderBg}>
 				<div className={s.MainTitle}>
-					<h1>@seppass_bot</h1>
+				<a href='https://t.me/seppass_bot'><h1>@seppass_bot</h1></a>
 				</div>
 				<div className={s.Header}>
 					<h1>Seppass</h1>

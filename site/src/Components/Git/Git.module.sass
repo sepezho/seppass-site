@@ -6,44 +6,42 @@
 	left: 50%
 	transform: translate(-50%)
 
-.CoreBg
+.GitBg
 	position: relative
 	width: 100%
-	background: black
 
-.Core
+.Git
 	position: relative
 	@include center_left_block()
 	width: 1200px
-	color: white
+	// background: green
 	::selection 
-		background: white
-		color: black
-		
+		background: black
+		color: white
+
+.Video
+	border-radius: 5px
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.75)
+
+.Video_div
+	position: absolute
+	@include center_top_block()
+	right: 0
+	perspective: 1000px
+  	transform-style: preserve-3d
+
 .CoreText
 	position: relative
 	top: 150px
 	width: 500px
 	height: 1000px
-	left: 700px
+	left: 0
 	padding-bottom: 100px
 	text-align: justify
-
 	p
 		margin-bottom: 50px
 	a
-		color: white
+		color: black
 		text-decoration: none
 	a:hover
 		color: #8D41D6
-
-.Video
-	border-radius: 5px
-	box-shadow: 0 0 50px rgba(255, 255, 255, 0.75)
-
-.Video_div
-	position: absolute
-	@include center_top_block()
-	left: 0
-	perspective: 1000px
-  	transform-style: preserve-3d
