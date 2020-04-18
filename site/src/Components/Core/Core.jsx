@@ -1,25 +1,24 @@
 import React from "react";
-
-import Core_video from "../../Static/Header_video.mp4";
-
-import Card from "../Paralax_module.js";
+import Core_video from "../../Static/Core_video.mp4";
+import View_more from "../../Static/Icon/View_more.png";
 import s from "./Core.module.sass";
 
 class Core_render extends React.Component { 
 	constructor(props) {
-        super(props);
-    }
-	
-	componentDidMount(){
-		let card = new Card(s);
-		card.run();
+		super(props);
+		this.handleClick = this.handleClick.bind(this);
 	}
+	
+	handleClick = () => {
+		window.scrollTo({top: document.querySelector('.'+s.CoreBg).offsetTop+document.querySelector('.'+s.CoreBg).offsetHeight, left: 0, behavior: 'smooth'})
+	}
+
 	render() {
 		return (
 			<div className={s.CoreBg}>
 				<div className={s.Core}>
-					<div className={s.Video_div}>
-						<video className={s.Video} autoPlay={true} loop={true} muted="muted">
+					<div className='Video_div' id={s.Video_div}>
+						<video className='Video' id={s.Video} autoPlay={true} loop={true} muted="muted">
 	    					<source src={Core_video} type='video/mp4'/>
 	   					</video> 
 					</div>
@@ -49,6 +48,11 @@ class Core_render extends React.Component {
 							Я сделал утилиту лучше и не менее надежную, чем знаменитый менеджер pass.
 						</p>
 					</div>
+					<img
+						src={View_more}
+						onClick={this.handleClick}
+						alt='#'
+					/>
 				</div>
 			</div>
 		)

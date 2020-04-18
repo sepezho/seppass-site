@@ -5,57 +5,55 @@
 @mixin center_left_block()
 	left: 50%
 	transform: translate(-50%)
+
 .HeaderBg
 	position: relative
 	::selection 
 		background: black
 		color: white
+
 .Header
 	position: relative
 	width: 1200px
-	height: 100vh
+	height: 1000px
 	@include center_left_block()
 	> 
-		h1
-			position: absolute
-			@include center_top_block()
-
-			box-shadow: 0 0 5px black
-			background: white
-			color: black
-			
-			&:hover
-				background: rgba(0, 0, 0, 0.75)
-				color: white
 		img
 			position: absolute
-			bottom: 200px
-			left: 310px
+			@include center_left_block()
 			width: 40px
+			bottom: 50px
 
 			&:hover
-				transform: translate(0, 25%)
-.Video
-	border-radius: 5px
+				transform: translate(-50%, 25%)
+#Video
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.75)
 
-.Video_div
-	position: absolute
-	@include center_top_block()
+#Video_div
 	right: 0
-	perspective: 1000px
-  	transform-style: preserve-3d
 
 .Title
 	position: absolute
 	@include center_top_block()
-	width: 500px
-	left: 220px
+
+	h1
+		position: absolute
+		@include center_left_block()
+		box-shadow: 0 0 5px black
+		background: white
+		color: black
+		top: -75px
+
+		&:hover
+			background: rgba(0, 0, 0, 0.75)
+			color: white
+
+	text-align: center
+	width: 380px
+	left: 50px
 
 .MainTitle
-	position: fixed
-	// position: absolute
-	// height: 67px
+	position: absolute
 	width: 100%
 	top: 0
 	z-index: 1
@@ -71,5 +69,4 @@
 
 		&:hover
 			background: white
-			// color: black
 			color: #8D41D6

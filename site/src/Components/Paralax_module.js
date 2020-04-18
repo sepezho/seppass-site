@@ -1,5 +1,5 @@
-function Card(s) {
-	this.cards = document.querySelectorAll('.' + s.Video_div);
+function Card() {
+	this.cards = document.querySelectorAll('.Video_div');
 	this.bindEventsCard = function() {
 		for (let i = 0, length = this.cards.length; i < length; i++) {
 			this.cards[i].addEventListener('mousemove', this.startRotate);
@@ -7,13 +7,13 @@ function Card(s) {
 		}
 	}
 	this.startRotate = function(event) {
-		let cardItem = this.querySelector('.'+s.Video),
+		let cardItem = this.querySelector('.Video'),
 			halfHeight = cardItem.offsetHeight / 2,
 			halfWidth = cardItem.offsetWidth / 2;
 		cardItem.style.transform = 'rotatex(' + -(event.offsetY - halfHeight) / 25 + 'deg) rotateY(' + (event.offsetX - halfWidth) / 25 + 'deg)';
 	}
 	this.stopRotate = function(event) {
-		let cardItem = this.querySelector('.'+s.Video);
+		let cardItem = this.querySelector('.Video');
 		cardItem.style.transform = 'rotate(0)';
 	}
 	this.run = () => {

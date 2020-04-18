@@ -1,0 +1,49 @@
+@mixin center_top_block()
+	top: 50%
+	transform: translate(0, -50%)
+
+@mixin center_left_block()
+	left: 50%
+	transform: translate(-50%)
+
+.FooterBg
+	position: relative
+	width: 100%
+	background: black
+	color: white
+	top: 50px
+	::selection 
+		background: white
+		color: black
+	h1
+		position: absolute
+		@include center_top_block()
+		right: 0
+		background: black
+		box-shadow: 0 0 5px white
+		color: white
+		
+		&:hover
+			background: rgba(255, 255, 255, 0.75)
+			color: #8D41D6
+
+.Footer
+	position: relative
+	@include center_left_block()
+	width: 1200px
+	height: 100px
+	
+.Author
+	position: absolute
+	@include center_top_block()
+	a
+		color: white
+		&:hover
+			color: #8D41D6
+			text-decoration: none
+.Text
+	position: absolute
+	text-align: center
+	@include center_left_block()
+	@include center_top_block()
+	transform: translate(-50%, -50%)

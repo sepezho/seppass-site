@@ -14,32 +14,34 @@
 	position: relative
 	@include center_left_block()
 	width: 1200px
-	// background: green
+	height: 950px
 	::selection 
 		background: black
 		color: white
-
-.Video
-	border-radius: 5px
+	>
+		img
+			position: absolute
+			@include center_left_block()
+			width: 40px
+			bottom: 0px
+			transform: rotate(180deg)
+			&:hover
+				transform: rotate(180deg) translate(0, 25%)
+#Video
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.75)
 
-.Video_div
-	position: absolute
-	@include center_top_block()
+#Video_div
 	right: 0
-	perspective: 1000px
-  	transform-style: preserve-3d
 
 .CoreText
 	position: relative
-	top: 150px
 	width: 500px
-	height: 1000px
-	left: 0
-	padding-bottom: 100px
 	text-align: justify
+	@include center_top_block()
+	padding-top: 50px
 	p
 		margin-bottom: 50px
+		// margin-top: 50px
 	a
 		color: black
 		text-decoration: none

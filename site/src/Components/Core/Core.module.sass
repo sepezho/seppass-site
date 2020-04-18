@@ -15,35 +15,37 @@
 	position: relative
 	@include center_left_block()
 	width: 1200px
+	height: 1000px
 	color: white
 	::selection 
 		background: white
 		color: black
-		
+	>
+		img
+			position: absolute
+			@include center_left_block()
+			width: 40px
+			bottom: 50px
+			filter: invert(1)
+			&:hover
+				transform: translate(-50%, 25%)
 .CoreText
-	position: relative
-	top: 150px
+	position: absolute
 	width: 500px
-	height: 1000px
 	left: 700px
-	padding-bottom: 100px
 	text-align: justify
-
+	@include center_top_block()
 	p
 		margin-bottom: 50px
+		margin-top: 50px
 	a
 		color: white
-		text-decoration: none
 	a:hover
+		text-decoration: none
 		color: #8D41D6
 
-.Video
-	border-radius: 5px
+#Video
 	box-shadow: 0 0 50px rgba(255, 255, 255, 0.75)
 
-.Video_div
-	position: absolute
-	@include center_top_block()
+#Video_div
 	left: 0
-	perspective: 1000px
-  	transform-style: preserve-3d
