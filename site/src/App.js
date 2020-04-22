@@ -7,16 +7,14 @@ import Git from './Components/Git/Git.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 
 class App extends React.Component {
-	render() {
-		return (
-			<div className="App">
-				<Header />
-				<Core />
-				<Git />
-				<Footer />
-			</div>
-		)
-	}
+        render() {
+                return (<div className="App">
+                        <Header/>
+                        <Core/>
+                        <Git/>
+                        <Footer/>
+                </div>)
+        }
 }
 
 export default App;

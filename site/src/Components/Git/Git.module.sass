@@ -31,7 +31,7 @@
 	position: relative
 	@include center_left_block()
 	width: 1200px
-	::selection 
+	::selection
 		background: black
 		color: white
 	@include size(XS)
@@ -43,7 +43,7 @@
 	@include size(L)
 		width: 90%
 		height: 1150px
-	
+
 	@include size(XL)
 		height: 1000px
 		width: 1200px
@@ -82,13 +82,12 @@
 
 	@include size(L)
 		position: absolute
-		top: 50%
-		left: 100%
-		transform: translate(-100%, -50%)
+		@include center_top_block()
+		left: 0
 		width: 450px
 		padding-top: 0
 		margin-bottom: 0
-	
+
 	@include size(XL)
 		width: 500px
 	p
@@ -116,5 +115,6 @@
 		transform: translate(-50%, -50%)
 
 	@include size(L)
-		@include center_top_block()
-		left: 0
+		top: 50%
+		transform: translate(-100%, -50%)
+		left: 100%
