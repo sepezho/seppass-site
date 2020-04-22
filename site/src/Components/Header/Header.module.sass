@@ -6,36 +6,105 @@
 	left: 50%
 	transform: translate(-50%)
 
+@mixin size($size)
+	@if $size == XL
+		@media screen and (min-width: 1300px)
+			@content
+
+	@else if $size == L
+		@media screen and (min-width: 992px)
+			@content
+
+	@else if $size == HL
+		@media screen and (min-width: 900px)
+			@content
+
+	@else if $size == M
+		@media screen and (min-width: 768px)
+			@content
+
+	@else if $size == S
+		@media screen and (min-width: 600px)
+			@content
+
+	@else if $size == XS
+		@media screen and (max-width: 600px)
+			@content
+
 .HeaderBg
 	position: relative
+	margin: none
+	padding: none
 	::selection 
 		background: black
 		color: white
 
 .Header
 	position: relative
-	width: 1200px
-	height: 1000px
 	@include center_left_block()
+	@include size(XS)
+		width: 90%
+		height: 800px
+
+	@include size(S)
+		width: 90%
+		height: 950px
+
+	@include size(L)
+		height: 1000px
+		width: 900px
+	
+	@include size(XL)
+		width: 1200px
+
 	> 
 		img
 			position: absolute
 			@include center_left_block()
 			width: 40px
-			bottom: 50px
 
+			@include size(XS)
+				width: 30px
+			
+			bottom: 50px
 			&:hover
 				transform: translate(-50%, 25%)
+
 #Video
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.75)
+	@include size(XS)
+		width: 300px
 
 #Video_div
-	right: 0
+	@include size(XS)
+		transform: translate(-50%, -50%)
+		left: 50%
+		top: 300px
+
+	@include size(S)
+		transform: translate(-50%, -50%)
+		left: 50%
+		top: 370px
+
+	@include size(HL)
+		@include center_top_block()
+		transform: translate(-100%, -50%)
+		left: 100%
 
 .Title
 	position: absolute
-	@include center_top_block()
+	@include size(XS)
+		@include center_left_block()
+		top: 640px
 
+	@include size(S)
+		@include center_left_block()
+		top: 750px
+
+	@include size(HL)
+		@include center_top_block()
+		left: 0
+	
 	h1
 		position: absolute
 		@include center_left_block()

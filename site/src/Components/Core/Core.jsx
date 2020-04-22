@@ -3,12 +3,12 @@ import Core_video from "../../Static/Core_video.mp4";
 import View_more from "../../Static/Icon/View_more.png";
 import s from "./Core.module.sass";
 
-class Core_render extends React.Component { 
+class Core_render extends React.Component {
 	constructor(props) {
 		super(props);
 		this.handleClick = this.handleClick.bind(this);
 	}
-	
+
 	handleClick = () => {
 		window.scrollTo({top: document.querySelector('.'+s.CoreBg).offsetTop+document.querySelector('.'+s.CoreBg).offsetHeight, left: 0, behavior: 'smooth'})
 	}
@@ -20,16 +20,16 @@ class Core_render extends React.Component {
 					<div className='Video_div' id={s.Video_div}>
 						<video className='Video' id={s.Video} autoPlay={true} loop={true} muted="muted">
 	    					<source src={Core_video} type='video/mp4'/>
-	   					</video> 
+	   					</video>
 					</div>
 					<div className={s.CoreText}>
 						<p>
 							<a href='https://t.me/seppass_bot'>@seppass_bot</a> - это надежный способ хранения записей.
 							Каждый пользователь на сервере имеет его собственную папку,
 							в которой хранятся его записи и другая информация.
-							Чтобы удостовериться в этом вы всегда можете скачать папку 
+							Чтобы удостовериться в этом вы всегда можете скачать папку
 							со всей вашей информацией и файлами, как она есть.
-							Каждый пользователь при регистрации генерирует свой собственный 
+							Каждый пользователь при регистрации генерирует свой собственный
 							gpg-ключ, пароль от него создает и знает только он (на сервере пароль нигде не сохраняется!).
 							В дальнейшем, при создании записи она шифруется, и записывается в файлик, в вашу папку.
 							После создания записи НИКТО не сможет её просмотреть, не зная пароля от ключа.

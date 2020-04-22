@@ -6,6 +6,23 @@
 	left: 50%
 	transform: translate(-50%)
 
+@mixin size($size)
+	@if $size == XL
+		@media screen and (min-width: 1300px)
+			@content
+
+	@else if $size == L
+		@media screen and (min-width: 992px)
+			@content
+
+	@else if $size == S
+		@media screen and (min-width: 600px)
+			@content
+
+	@else if $size == XS
+		@media screen and (max-width: 600px)
+			@content
+
 .GitBg
 	position: relative
 	width: 100%
@@ -14,36 +31,90 @@
 	position: relative
 	@include center_left_block()
 	width: 1200px
-	height: 950px
 	::selection 
 		background: black
 		color: white
+	@include size(XS)
+		width: 90%
+
+	@include size(S)
+		width: 90%
+
+	@include size(L)
+		width: 90%
+		height: 1150px
+	
+	@include size(XL)
+		height: 1000px
+		width: 1200px
 	>
 		img
-			position: absolute
-			@include center_left_block()
+			position: relative
+			left: 50%
 			width: 40px
-			bottom: 0px
-			transform: rotate(180deg)
-			&:hover
-				transform: rotate(180deg) translate(0, 25%)
-#Video
-	box-shadow: 0 0 50px rgba(0, 0, 0, 0.75)
+			margin-bottom: 50px
+			bottom: 0
+			transform: rotate(180deg) translate(50%, 0)
 
-#Video_div
-	right: 0
+			@include size(XS)
+				width: 30px
+
+			@include size(L)
+				position: absolute
+
+			&:hover
+				transform: rotate(180deg) translate(50%, 25%)
 
 .CoreText
-	position: relative
-	width: 500px
 	text-align: justify
-	@include center_top_block()
-	padding-top: 50px
+
+	@include size(XS)
+		position: relative
+		padding-top: 475px
+		width: 100%
+
+	@include size(S)
+		position: relative
+		@include center_left_block()
+		width: 100%
+		padding-top: 575px
+		margin-bottom: 50px
+
+	@include size(L)
+		position: absolute
+		top: 50%
+		left: 100%
+		transform: translate(-100%, -50%)
+		width: 450px
+		padding-top: 0
+		margin-bottom: 0
+	
+	@include size(XL)
+		width: 500px
 	p
 		margin-bottom: 50px
-		// margin-top: 50px
 	a
 		color: black
 		text-decoration: none
 	a:hover
 		color: #8D41D6
+
+#Video
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.75)
+	@include size(XS)
+		width: 300px
+#Video_div
+	position: absolute
+	z-index: 1
+	@include size(XS)
+		@include center_left_block()
+		top: 50px
+
+	@include size(S)
+		top: 293px
+		left: 50%
+		transform: translate(-50%, -50%)
+
+	@include size(L)
+		@include center_top_block()
+		left: 0

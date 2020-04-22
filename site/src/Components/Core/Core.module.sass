@@ -6,6 +6,23 @@
 	left: 50%
 	transform: translate(-50%)
 
+@mixin size($size)
+	@if $size == XL
+		@media screen and (min-width: 1300px)
+			@content
+
+	@else if $size == L
+		@media screen and (min-width: 992px)
+			@content
+
+	@else if $size == S
+		@media screen and (min-width: 600px)
+			@content
+
+	@else if $size == XS
+		@media screen and (max-width: 600px)
+			@content
+
 .CoreBg
 	position: relative
 	width: 100%
@@ -14,38 +31,90 @@
 .Core
 	position: relative
 	@include center_left_block()
-	width: 1200px
-	height: 1000px
 	color: white
 	::selection 
 		background: white
 		color: black
+	@include size(XS)
+		width: 90%
+
+	@include size(S)
+		width: 90%
+
+	@include size(L)
+		width: 90%
+		height: 1150px
+	
+	@include size(XL)
+		height: 1000px
+		width: 1200px
+
 	>
 		img
-			position: absolute
+			position: relative
 			@include center_left_block()
 			width: 40px
-			bottom: 50px
+			margin-bottom: 50px
+			@include size(XS)
+				width: 30px
+
+			@include size(L)
+				position: absolute
+				bottom: 0
+			
 			filter: invert(1)
 			&:hover
 				transform: translate(-50%, 25%)
 .CoreText
-	position: absolute
-	width: 500px
-	left: 700px
 	text-align: justify
-	@include center_top_block()
+	@include size(XS)
+		padding-top: 425px
+		width: 100%
+
+	@include size(S)
+		position: relative
+		@include center_left_block()
+		width: 100%
+		padding-top: 575px
+
+	@include size(L)
+		position: absolute
+		top: 50%
+		left: 100%
+		transform: translate(-100%, -50%)
+		width: 450px
+		padding-top: 0
+	
+	@include size(XL)
+		width: 500px
+
 	p
 		margin-bottom: 50px
 		margin-top: 50px
+
 	a
 		color: white
+
 	a:hover
 		text-decoration: none
 		color: #8D41D6
 
 #Video
 	box-shadow: 0 0 50px rgba(255, 255, 255, 0.75)
+	@include size(XS)
+		width: 300px
 
 #Video_div
-	left: 0
+	position: absolute
+	z-index: 1
+	@include size(XS)
+		@include center_left_block()
+		top: 50px
+	@include size(S)
+		top: 293px
+		left: 50%
+		transform: translate(-50%, -50%)
+
+	@include size(L)
+		@include center_top_block()
+		left: 0

@@ -6,23 +6,58 @@
 	left: 50%
 	transform: translate(-50%)
 
+@mixin size($size)
+	@if $size == XL
+		@media screen and (min-width: 1300px)
+			@content
+
+	@else if $size == HL
+		@media screen and (min-width: 1125px)
+			@content
+
+	@else if $size == L
+		@media screen and (min-width: 992px)
+			@content
+
+	@else if $size == S
+		@media screen and (min-width: 600px)
+			@content
+
+	@else if $size == XS
+		@media screen and (max-width: 600px)
+			@content
+
 .FooterBg
 	position: relative
 	width: 100%
 	background: black
 	color: white
-	top: 50px
-	::selection 
+
+	::selection
 		background: white
 		color: black
-	h1
+.Seppass_bot
+	position: relative
+	top: 20px
+	padding: none
+	text-align: center
+	width: 322.867px
+	@include center_left_block()
+
+	@include size(HL)
 		position: absolute
-		@include center_top_block()
+		margin: none
+		left: auto
+		width: auto
 		right: 0
+		@include center_top_block()
+	a
+		text-decoration: none
+	h1
 		background: black
 		box-shadow: 0 0 5px white
 		color: white
-		
+
 		&:hover
 			background: rgba(255, 255, 255, 0.75)
 			color: #8D41D6
@@ -30,20 +65,56 @@
 .Footer
 	position: relative
 	@include center_left_block()
-	width: 1200px
-	height: 100px
-	
+	@include size(XS)
+		width: 90%
+		height: 155px
+
+	@include size(S)
+		width: 90%
+		height: 210px
+
+	@include size(HL)
+		height: 100px
+
+	@include size(XL)
+		width: 1200px
+
 .Author
 	position: absolute
-	@include center_top_block()
+	@include size(XS)
+		@include center_left_block()
+		top: 75px
+	@include size(S)
+		@include center_left_block()
+		top: 95px
+
+	@include size(HL)
+		left : 0
+		@include center_top_block()
+
 	a
 		color: white
 		&:hover
 			color: #8D41D6
 			text-decoration: none
 .Text
-	position: absolute
-	text-align: center
-	@include center_left_block()
-	@include center_top_block()
-	transform: translate(-50%, -50%)
+
+	@include size(XS)
+		position: absolute
+		width: 267.25px
+		top: 100px
+		@include center_left_block()
+		text-align: center
+
+	@include size(S)
+		position: absolute
+		width: 267.25px
+		top: 135px
+		@include center_left_block()
+		text-align: center
+
+
+	@include size(HL)
+		position: absolute
+		@include center_top_block()
+		transform: translate(-50%, -50%)
