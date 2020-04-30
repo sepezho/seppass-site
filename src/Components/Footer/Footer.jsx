@@ -19,8 +19,7 @@ class Footer_render extends React.Component {
                                 </div>
                                 <span className={s.Text}>
                                         Храните пароли правильно!
-                                        <br/>
-                                        <br/>
+                                        <p>Для перехода к боту нажмите на любой '@seppass_bot'</p>
                                         2020
                                 </span>
 
