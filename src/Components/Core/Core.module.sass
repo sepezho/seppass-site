@@ -27,12 +27,13 @@
 	position: relative
 	width: 100%
 	background: black
+	box-shadow: 0 0 10px black
 
 .Core
 	position: relative
 	@include center_left_block()
 	color: white
-	::selection 
+	::selection
 		background: white
 		color: black
 	@include size(XS)
@@ -44,7 +45,7 @@
 	@include size(L)
 		width: 90%
 		height: 1150px
-	
+
 	@include size(XL)
 		height: 1000px
 		width: 1200px
@@ -61,7 +62,7 @@
 			@include size(L)
 				position: absolute
 				bottom: 0
-			
+
 			filter: invert(1)
 			&:hover
 				transform: translate(-50%, 25%)
@@ -84,7 +85,7 @@
 		transform: translate(-100%, -50%)
 		width: 450px
 		padding-top: 0
-	
+
 	@include size(XL)
 		width: 500px
 

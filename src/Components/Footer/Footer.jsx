@@ -14,12 +14,11 @@ class Footer_render extends React.Component {
                                         </a>
                                 </div>
                                 <div className={s.Author}>
-                                        Автор:
-                                        <a href='https://sepezho.ru'>sepezho</a>
+                                        Автор: <a href='https://sepezho.ru'>sepezho</a>
                                 </div>
                                 <span className={s.Text}>
                                         Храните пароли правильно!
-                                        <p>Для перехода к боту нажмите на любой '@seppass_bot'</p>
+                                        <p>Для перехода к боту нажмите на его любое упоминание.</p>
                                         2020
                                 </span>
 
