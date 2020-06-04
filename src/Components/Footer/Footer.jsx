@@ -19,7 +19,7 @@ class Footer_render extends React.Component {
                                 <span className={s.Text}>
                                         Храните пароли правильно!
                                         <p>Для перехода к боту нажмите на его любое упоминание.</p>
-                                        2020
+                                        Apr 2020
                                 </span>
 
                         </div>
